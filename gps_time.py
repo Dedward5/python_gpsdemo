@@ -1,5 +1,6 @@
 # Most basic GPS demo
 
+
 # From http://www.catb.org/gpsd/gpsd_json.html
 
 import os
@@ -17,9 +18,14 @@ for new_data in gps_socket:
 		print('Altitude = ', data_stream.TPV['alt'])
 		print('Latitude = ', data_stream.TPV['lat'])
 		print('Longitude = ', data_stream.TPV['lon'])
-#y        print('Satellites = ', data_stream.SKY['satellites'])
-#        print('Status  = ', data_stream.TPV['status'])
+#        	print('Satellites = ', data_stream.SKY['satellites'])
+#       	print('Status  = ', data_stream.TPV['status']
 
+		gps_time = data_stream.TPV['time']
+		gps_date = data_stream.TPV['date']
+
+		print ("GPS time is ",gps_time)
+		print ("GPS date is ",gps_date)
 
 
 data_stream = gps3.DataStream()
